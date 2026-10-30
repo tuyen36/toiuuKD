@@ -23,24 +23,13 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Accept Android SDK licenses
-        run: yes | sdkmanager --licenses || true
-
-      - name: Install SDK packages
-        run: |
-          sdkmanager --update
-          sdkmanager "platform-tools" "platforms;android-34" "build-tools;34.0.0"
-
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.7'
 
-      - name: Unit test (golden test)
-        run: gradle --no-daemon testDebugUnitTest
-
-      - name: Build debug APK
-        run: gradle --no-daemon assembleDebug
+      - name: Build debug APK with Gradle
+        run: gradle --no-daemon assembleDebug testDebugUnitTest
 
       - name: Report test results
         if: always()
