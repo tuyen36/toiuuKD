@@ -9,6 +9,7 @@ import androidx.compose.runtime.setValue
 import vn.toiuu.app.core.fmtClean
 import vn.toiuu.app.data.Preset
 import vn.toiuu.app.data.ToolKind
+import vn.toiuu.app.ui.BreakevenMultiScreen
 import vn.toiuu.app.ui.BreakevenScreen
 import vn.toiuu.app.ui.CasesScreen
 import vn.toiuu.app.ui.HomeScreen
@@ -16,7 +17,7 @@ import vn.toiuu.app.ui.LpScreen
 import vn.toiuu.app.ui.PricingScreen
 import vn.toiuu.app.ui.TrapsScreen
 
-enum class Screen { HOME, PRICING, BREAKEVEN, LP, TRAPS, CASES }
+enum class Screen { HOME, PRICING, BREAKEVEN, BREAKEVEN_MULTI, LP, TRAPS, CASES }
 
 data class LpForm(
     val a: String,
@@ -106,6 +107,7 @@ fun App() {
         Screen.HOME -> HomeScreen(state)
         Screen.PRICING -> PricingScreen(state)
         Screen.BREAKEVEN -> BreakevenScreen(state)
+        Screen.BREAKEVEN_MULTI -> BreakevenMultiScreen(state)
         Screen.LP -> LpScreen(state)
         Screen.TRAPS -> TrapsScreen(state)
         Screen.CASES -> CasesScreen(state)

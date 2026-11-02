@@ -94,6 +94,12 @@ fun HomeScreen(s: AppState) {
             Spacer(Modifier.height(8.dp))
 
             ToolCard(
+                "34", "Biểu đồ đa sản phẩm",
+                "Quy hoạch 2 sản phẩm với tổng sản lượng Q",
+                { s.screen = Screen.BREAKEVEN_MULTI }
+            )
+
+            ToolCard(
                 "33", "33 bẫy thường gặp",
                 "Tìm theo từ khoá, đúng thứ tự như trong sách"
             ) { s.screen = Screen.TRAPS }
