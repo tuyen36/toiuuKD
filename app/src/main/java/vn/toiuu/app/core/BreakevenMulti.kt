@@ -4,6 +4,8 @@
  * Tổng Chi phí: TC = FC + Σ(vc_i * q_i + qc_i * q_i^2)
  * Giải hệ phương trình Newton tại mỗi bước lặp: π(q) = TR(q) - TC(q) = 0
  */
+import kotlin.math.sqrt
+
 object BreakevenMulti {
 
     data class Product(
