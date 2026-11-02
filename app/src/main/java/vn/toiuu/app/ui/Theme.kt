@@ -15,6 +15,11 @@ val Paper = Color(0xFFF7F9FC)
 val Ink = Color(0xFF1A202C)
 val Muted = Color(0xFF5A6678)
 val Line = Color(0xFFD9E0E8)
+val Green = Color(0xFF2E7D32)
+val GreenBg = Color(0xFFE8F5E9)
+val Red = Color(0xFFC62828)
+val RedBg = Color(0xFFFFEBEE)
+val BlueChart = Color(0xFF1976D2)
 
 private val LightScheme = lightColorScheme(
     primary = Navy,
