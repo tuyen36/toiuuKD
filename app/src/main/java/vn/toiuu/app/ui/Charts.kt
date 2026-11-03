@@ -37,7 +37,6 @@ import vn.toiuu.app.core.Constraint
 import vn.toiuu.app.core.LpResult
 import vn.toiuu.app.core.Pricing
 import vn.toiuu.app.core.PricingInput
-import androidx.compose.ui.geometry.Offset
 import vn.toiuu.app.core.PricingResult
 import vn.toiuu.app.core.fmtClean
 import kotlin.math.max
