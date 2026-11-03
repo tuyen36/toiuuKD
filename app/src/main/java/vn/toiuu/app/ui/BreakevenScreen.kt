@@ -192,15 +192,16 @@ fun BreakevenScreen(s: AppState) {
                         )
                         ResultRow("Giá đóng cửa (AVC min)", money(res.shutdownPrice, unit))
 
-                        Spacer(Modifier.height(12.dp))
                         Button(
-                            onClick = {
-                                val report = buildString {
+                        onClick = {
+                            val report = buildString {
+                                val safeInput = input
+                                if (safeInput != null) {
                                     appendLine("📊 PHÂN TÍCH ĐIỂM HÒA VỐN")
-                                    appendLine("• Giá bán: ${money(input.price, unit)}")
-                                    appendLine("• Biến phí / đv: ${money(input.vc, unit)}")
-                                    appendLine("• Định phí: ${money(input.fc, unit)}")
-                                    appendLine("• Sản lượng hiện tại Q: ${fmtClean(input.q, 1)}")
+                                    appendLine("• Giá bán: ${money(safeInput.price, unit)}")
+                                    appendLine("• Biến phí / đv: ${money(safeInput.vc, unit)}")
+                                    appendLine("• Định phí: ${money(safeInput.fc, unit)}")
+                                    appendLine("• Sản lượng hiện tại Q: ${fmtClean(safeInput.q, 1)}")
                                     appendLine("---------------------------")
                                     appendLine("• Điểm hòa vốn: ${res.qLow?.let { fmtClean(it, 1) + " / kỳ" } ?: "Không có"}")
                                     appendLine("• Lợi nhuận tại Q: ${money(res.profit, unit)}")
@@ -209,14 +210,15 @@ fun BreakevenScreen(s: AppState) {
                                     appendLine("• Biên an toàn: ${res.marginOfSafety?.let { fmt(it * 100, 1) + "%" } ?: "—"}")
                                     appendLine("[Ứng dụng Tối Ưu Kinh Doanh]")
                                 }
-                                shareAnalysisResult(context, report, "Phân tích điểm hòa vốn")
-                            },
-                            colors = ButtonDefaults.buttonColors(containerColor = Navy),
-                            modifier = Modifier.fillMaxWidth(),
-                            shape = RoundedCornerShape(10.dp)
-                        ) {
-                            Text("📤 Chia sẻ kết quả", fontSize = 13.5.sp, color = Color.White)
-                        }
+                            }
+                            shareAnalysisResult(context, report, "Phân tích điểm hòa vốn")
+                        },
+                        colors = ButtonDefaults.buttonColors(containerColor = Navy),
+                        modifier = Modifier.fillMaxWidth(),
+                        shape = RoundedCornerShape(10.dp)
+                    ) {
+                        Text("📤 Chia sẻ kết quả", fontSize = 13.5.sp, color = Color.White)
+                    }
                     }
 
                     Spacer(Modifier.height(10.dp))

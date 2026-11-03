@@ -45,11 +45,12 @@ import kotlin.math.max
 
 @Composable
 fun BreakevenChart(
-    input: BreakevenInput,
+    input: BreakevenInput?,
     res: BreakevenResult,
     unit: String,
     modifier: Modifier = Modifier
 ) {
+    if (input == null) return
     val qBe = res.qLow ?: input.q
     val qMax = (max(input.q, qBe) * 1.55).coerceAtLeast(10.0)
 
