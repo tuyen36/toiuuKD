@@ -1,8 +1,5 @@
-/**
- * Hàm tính điểm hòa vốn đa sản phẩm (n > 1).
- * Tổng Doanh thu: TR = Σ(p_i * q_i)
- * Tổng Chi phí: TC = FC + Σ(vc_i * q_i + qc_i * q_i^2)
- */
+package vn.toiuu.app.core
+
 import kotlin.math.sqrt
 
 object BreakevenMulti {
