@@ -84,20 +84,21 @@ fun MultiBreakevenScreen(s: AppState) {
                 }
             }
 
-            Spacer(Modifier.height(12.dp))
+            Spacer(Modifier.height(8.dp))
 
             result?.let {
                 if (it.feasible) {
                     Box(
                         Modifier
                             .fillMaxWidth()
+                            .padding(vertical = 6.dp)
                             .clip(RoundedCornerShape(12.dp))
                             .background(Color(0xFFF0F8FF))
                             .padding(10.dp)
                     ) {
                         Text(
-                            "✔️ Tồn tại điểm hòa vốn tối ưu cho các sản phẩm này",
-                            fontSize = 12.5.sp,
+                            "✔️ Tồn tại điểm hòa vốn tối ưu",
+                            fontSize = 12.sp,
                             fontWeight = FontWeight.SemiBold,
                             color = Green
                         )
