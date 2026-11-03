@@ -22,10 +22,12 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.foundation.layout.width
 import androidx.compose.ui.unit.sp
 import vn.toiuu.app.core.BreakevenMulti
 import vn.toiuu.app.core.BreakevenMultiResult
 import vn.toiuu.app.core.BreakevenMulti.Product
+import vn.toiuu.app.core.fmtClean
 
 @Composable
 fun MultiBreakevenChart(
@@ -74,6 +76,8 @@ fun MultiBreakevenChart(
             val padT = 24f
             val w = size.width - padL - 24f
             val h = size.height - padT - 40f
+            fun toY(valuePercent: Float, height: Float, top: Float): Float =
+                top + (1f - valuePercent / 100f) * height
 
             if (result != null && result.feasible) {
                 val qTotal = result.totalQ.coerceAtLeast(1.0)
@@ -91,7 +95,7 @@ fun MultiBreakevenChart(
                     val color = labelColors[idx % labelColors.size]
                     drawRect(
                         color = color.copy(alpha = 0.85f),
-                        topLeft = androidx.compose.ui.geometry.Offset(x, y + barH - h),
+                        topLeft = androidx.compose.ui.geometry.Offset(x, (y + barH - h).toFloat()),
                         size = androidx.compose.ui.geometry.Size(barW, barH)
                     )
                     // Label
