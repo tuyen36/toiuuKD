@@ -78,7 +78,7 @@ fun MultiBreakevenScreen(s: AppState) {
                         modifier = Modifier
                             .clip(RoundedCornerShape(6.dp))
                             .background(Sky)
-                            .clickable { s.screen = Screen.HOME }
+                            .clickable { /* chỉnh sửa tổng Q */ }
                             .padding(horizontal = 10.dp, vertical = 4.dp)
                     )
                 }
@@ -133,7 +133,7 @@ fun MultiBreakevenScreen(s: AppState) {
             }
 
             Spacer(Modifier.height(12.dp))
-            // MultiBreakevenChart(result = result)
+            MultiBreakevenChart(result = result)
 
             Spacer(Modifier.height(14.dp))
         }
