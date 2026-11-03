@@ -37,6 +37,7 @@ import vn.toiuu.app.core.Constraint
 import vn.toiuu.app.core.LpResult
 import vn.toiuu.app.core.Pricing
 import vn.toiuu.app.core.PricingInput
+import androidx.compose.ui.geometry.Offset
 import vn.toiuu.app.core.PricingResult
 import vn.toiuu.app.core.fmtClean
 import kotlin.math.max
@@ -198,7 +199,7 @@ fun BreakevenChart(
                     strokeWidth = 1.5.dp.toPx(),
                     pathEffect = dashEffect
                 )
-                drawCircle(Navy, radius = 5.dp.toPx(), center = Offset(curX, curTrTr = curTrY))
+                drawCircle(Navy, radius = 5.dp.toPx(), center = Offset(curX, curTrY))
 
                 val curPaint = Paint().apply {
                     color = Navy.toArgb()

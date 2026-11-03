@@ -24,6 +24,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import vn.toiuu.app.core.BreakevenMulti
+import vn.toiuu.app.core.BreakevenMultiResult
 
 @Composable
 fun MultiBreakevenChart(
