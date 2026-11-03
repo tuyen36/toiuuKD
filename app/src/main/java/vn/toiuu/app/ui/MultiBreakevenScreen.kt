@@ -47,7 +47,7 @@ fun MultiBreakevenScreen(s: AppState) {
     }
 
     val result = remember(products, totalQ) {
-        BreakevenMulti.solve(Params(fc = 1000.0, products = products, totalQ = totalQ))
+        BreakevenMulti.solve(Params(fc = 100.0, products = products, totalQ = totalQ))
     }
 
     ScreenFrame(
