@@ -25,10 +25,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import vn.toiuu.app.core.BreakevenMulti
 import vn.toiuu.app.core.BreakevenMultiResult
+import vn.toiuu.app.core.BreakevenMulti.Product
 
 @Composable
 fun MultiBreakevenChart(
-    products: List<BreakevenMulti.Product>,
     result: BreakevenMultiResult?,
     modifier: Modifier = Modifier
 ) {
